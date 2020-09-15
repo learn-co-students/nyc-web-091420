@@ -27,6 +27,9 @@
 - Pry
 - Require (local) vs Gemfile (run bundle install)
 - Show where this code lives on github and how to access it! 
+- Git advice...
+    pay attention to where you are in terminal (ie which folder are you in)
+    
 
 
 ## Icebox
