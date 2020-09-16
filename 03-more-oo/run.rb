@@ -7,34 +7,47 @@ require_relative './app/models/user'
 ## 3. Let's be able to search for an animal by name 
 
 def run 
-    puts "Welcome, please sign up"
-    puts "What is your name?"
-    name = gets.chomp 
-    puts "What is your age?"
-    age = gets.chomp 
-    puts "What is your social security number?"
-    ssn = gets.chomp 
-    # create a new user! 
-    user = User.new(name, age, ssn)
-
-    puts "Would you like to view your profile? (y/n)"
+    puts "Welcome, would you like to sign up or log in?"
     choice = gets.chomp
-    if choice == "y"
-        user.view_profile
+    if choice == "sign up"
+        puts "What is your name?"
+        name = gets.chomp 
+        puts "What is your age?"
+        age = gets.chomp 
+        puts "What is your social security number?"
+        ssn = gets.chomp 
+        # create a new user! 
+        User.new(name, age, ssn)
+        run
+    elsif choice == "log in"
+        puts "What's your name?"
+        name = gets.chomp
+        user = User.all.find{ |u| u.name == name } # find the user out of all of the users that currently exist 
+
+        puts "Would you like to view your profile? (y/n)"
+        # want to track how many times a users profile has been viewed 
+        # private ===> a user should not be able to increase their views on their own
+        
+        choice = gets.chomp
+        if choice == "y"
+            user.view_profile
+        end
+        binding.pry 
     end
 
-    puts "Would you like to change your name? (y/n)"
-    choice = gets.chomp
-    if choice == "y"
-        puts "What is your new name?"
-        new_name = gets.chomp
-        user.name = new_name
-        puts "Here's your updated profile"
-        user.view_profile
-    end
+
+    # puts "Would you like to change your name? (y/n)"
+    # choice = gets.chomp
+    # if choice == "y"
+    #     puts "What is your new name?"
+    #     new_name = gets.chomp
+    #     user.name = new_name
+    #     puts "Here's your updated profile"
+    #     user.view_profile
+    # end
 
 
-    binding.pry
+    # binding.pry
 end
 
 
