@@ -17,20 +17,12 @@ class Animal
     end
 
     def self.find_by_name(target_name)
-        # alternatives for @@all 
-        # Optional level up HW: how do you partial match? 
-            # there are methods to see if a string partially matches another string 
         self.all.find{ |animal| animal.name == target_name }
     end
 
     def self.find_by_species(target_species)
         self.all.find_all{ |ani| ani.species == target_species}
     end
-
-    # def self.find_by_name_and_change_name(target_name, new_name)
-    #     animal = self.all.find{ |animal| animal.name == target_name }
-    #     animal.name = new_name
-    # end
 
 end
 
