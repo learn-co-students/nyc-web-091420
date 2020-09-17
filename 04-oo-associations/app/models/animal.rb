@@ -1,14 +1,15 @@
 require 'pry'
 
 class Animal
-    attr_accessor :name, :sound 
+    attr_accessor :name, :sound, :owner 
     attr_reader :species
-    @@all
+    @@all = []
 
-    def initialize(name, species, sound)
+    def initialize(name, species, sound, owner=nil) # string, string, string, a user instance
         @name = name
         @species = species
         @sound = sound 
+        @owner = owner
         @@all << self
     end
 
@@ -26,20 +27,3 @@ class Animal
 
 end
 
-
-animals = [
-    {name: 'Mojo', species: 'cat', sound: 'yells'},
-    {name: 'Ziggy', species: 'dog', sound: 'Zzzz' },
-    {name: 'Luffy', species: 'cat', sound: 'Trills'},
-    {name: 'Twiggy', species: 'dog', sound: 'Barks'},
-    {name: 'Django', species: 'dog', sound: 'moos'},
-    {name: 'Flower', species: 'cat', sound: 'meow'},
-    {name: 'Lil Miss Grimes', species: 'cat', sound: 'chuff'},
-    {name: 'Max', species: 'fish', sound: 'plup'}
-]
-
-animals.each do |animal|
-    Animal.new(animal[:name], animal[:species], animal[:sound])
-end
-
-binding.pry 

@@ -33,6 +33,11 @@ class User
     def ssn 
         @ssn.chars.last(4).join
     end
+    
+    def self.of_driving_age
+        # User.of_driving_age: will return an array of all users who are 16 + years of age 
+        User.all.filter { |user| user.age > 15 }
+    end
 
     private
 
@@ -41,10 +46,4 @@ class User
     end
 
 end
-
-
-arthur = User.new("arthur", 47, "0928340982412345") # name, age, ssn
-brandon = User.new("brandon", 51)
-
-binding.pry
 
