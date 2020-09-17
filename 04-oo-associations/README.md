@@ -59,7 +59,22 @@ Build Animal & User Relationship
 
 Add Relationship Methods
 - Let's think of some together! 
+* * `User#buy_animal(name)` ==> create the new Animal and associate it with the user! 
+* * Add health, happiness and cleanliness to animal (initially 5?)
+* * For the below (feed, play, groom) which should *only* the owner be allowed to do? 
+- `User#feed_animal(animal)` Feed the animal only if it belongs to this user  ===> animal would need health (health++, happiness++, cleanliness-- )
+- `User#feed_all_my_animals` Feed all animals that belong to this user 
 
+
+
+
+- `User#play_with_animal(animal)`Play with the animal   ===> animal will need happiness (happiness++, cleanliness--)
+- `User#groom_animal(animal)`Groom an animals ===> animal has cleanliness and you can groom them and increase that score  (cleanliness++... )
+- Share animals ie walks? ===> Sisan can walk Mojo (who belongs to Caryn)
+- Training an animals
+
+***** building more methods ==> go slower
+building toy class ==> go faster 
 
 Time Permitting
 - Toys class

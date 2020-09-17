@@ -2,7 +2,7 @@ require 'pry'
 
 class User
     attr_writer :ssn
-    attr_accessor :name, :age
+    attr_accessor :name, :age 
     attr_reader :views
     @@all = [] 
 
@@ -16,6 +16,40 @@ class User
 
     def self.all 
         @@all 
+    end
+
+    def pets
+        Animal.all.filter { |animal_instance| animal_instance.owner == self }
+        # animal_instance here is the element; an instance of the Animal class 
+    end
+
+    def adopt_pet(pet_instance)
+        # an instance of the Animal class
+        pet_instance.owner = self # the current user instance 
+    end
+
+    def buy_animal(name, species, sound)
+        Animal.new(name, species, sound, self)
+    end
+
+    def feed_animal(animal)
+        #check if the animal belongs to the current user
+        if animal.owner == self
+            puts "Feeding #{animal.name} a delicious meal"
+            # increase health, increase happiness of animal 
+            animal.happiness += 1  #works diff in diff languages
+            animal.health += 1
+        else
+            puts "That ain't your animal!!! "
+        end
+    end
+
+    def feed_all_my_animals
+        # who are all of the animals associated with this user? 
+        # can I use another other methods to help... like feed_animal? 
+        self.pets.each do |pet|
+            self.feed_animal(pet)
+        end
     end
     
     def introduce

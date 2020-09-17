@@ -1,7 +1,7 @@
 require 'pry'
 
 class Animal
-    attr_accessor :name, :sound, :owner 
+    attr_accessor :name, :sound, :owner, :health, :happiness, :cleanliness
     attr_reader :species
     @@all = []
 
@@ -10,6 +10,9 @@ class Animal
         @species = species
         @sound = sound 
         @owner = owner
+        @health = 5
+        @happiness = 5
+        @cleanliness = 5
         @@all << self
     end
 
