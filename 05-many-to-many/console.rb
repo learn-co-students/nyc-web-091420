@@ -29,21 +29,18 @@ ziggy = Animal.new('Ziggy', 'dog', 'Zzzz') #, arthur)
 luffy = Animal.new('Luffy', 'cat', 'Trills') #, sisan)
 twiggy = Animal.new('Twiggy', 'dog', 'Barks') #, arthur)
 
+UserAnimal.new(caryn, mojo)
+UserAnimal.new(arthur, ziggy)
+UserAnimal.new(sisan, luffy)
+UserAnimal.new(arthur, twiggy)
+UserAnimal.new(bryn, twiggy)
 
-c_m = UserAnimal.new(caryn, mojo)
-a_z = UserAnimal.new(arthur, ziggy)
-s_l = UserAnimal.new(sisan, luffy)
-a_t = UserAnimal.new(arthur, twiggy)
-b_t = UserAnimal.new(bryn, twiggy)
 
 
 ## Can we see the user, animal and user animal instances
 ## Can I go from UA instance to the user and to the animal 
 ## Can I go from a user to their animals
 ## Can I go from an animal to their users
-
-
-
 
 binding.pry
 

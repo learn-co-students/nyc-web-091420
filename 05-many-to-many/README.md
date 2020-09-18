@@ -56,4 +56,18 @@ end
 
 
 ## Has Many Through
+JUST TWO ONE TO MANY RELATIONSHIPS!! 
+DRAW YOUR DIAGRAM
+KNOW YOUR RULES ABOVE 
+<3 CODE
 
+
+
+## Ideas
+- Add location to user and to animal
+    - if theyre in the same location, you can adopt them
+    - invite all local pets to pet party 
+    - find all local owners and animals
+    - pet parade
+- `Animal#say_hello_to_pawrents` say hello to all your owners
+- More models? Toys, costumes 

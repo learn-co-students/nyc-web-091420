@@ -18,12 +18,21 @@ class User
         @@all 
     end
 
-    def pets
-        Animal.all.filter { |animal_instance| animal_instance.owner == self }
+    def user_animals
+        UserAnimal.all.filter { |ua| ua.user == self }
     end
 
+    def animals
+        self.user_animals.map { |ua| ua.animal }
+    end
+
+    # def pets
+    #     Animal.all.filter { |animal_instance| animal_instance.owner == self }
+    # end
+
     def adopt_pet(pet_instance)
-        pet_instance.owner = self 
+        # pet_instance.owner = self 
+        UserAnimal.new(self, pet_instance)
     end
     
     def introduce
