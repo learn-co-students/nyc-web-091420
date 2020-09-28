@@ -47,37 +47,6 @@ I need to add a new attribute to an existing table ==> AR / Rake (migration!!!)
 - Models
 
 
-
-## Afternoon 
-- One to Many (probably afternoon)
-- Many to Many (probably afternoon)
-
-
-
-
-
-## Icebox
-- find_by and find_by! why one vs other is great for blog 
-- NoSQL databases? MongoDB, Cloud Firestore 
-- What's under the hood for google sheets? 
-- Writing your own Rake tasks! 
-- Security, encryption, rainbow tables, hashing and salting 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Afternoon:  Associations!
 - One to Many (probably afternoon)
 - Many to Many (probably afternoon)
@@ -97,9 +66,13 @@ I need to add a new attribute to an existing table ==> AR / Rake (migration!!!)
 
 
 
-## Resources
-- 5 AR Methods it might be nice to know: https://medium.com/swlh/5-must-know-active-record-methods-
+## Icebox
+- find_by and find_by! why one vs other is great for blog 
+- NoSQL databases? MongoDB, Cloud Firestore 
+- What's under the hood for google sheets? 
+- Writing your own Rake tasks! 
+- Security, encryption, rainbow tables, hashing and salting 
 
-### More helpful AR Methods
-- .find_or_create
+
+
 
