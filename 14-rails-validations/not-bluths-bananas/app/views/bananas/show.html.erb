@@ -1,0 +1,19 @@
+<h1>Banana Show</h1>
+
+<% if flash[:success] %>
+  <h2 style="color:green;"><%= flash[:success] %></h2>
+<% end %>
+
+<h3><%= @banana.name %></h3>
+<p>Topping: <%= @banana.toppings %></p>
+<p>Price: <%= @banana.price %></p>
+
+
+<%= button_to "DELETE", banana_path(@banana), method: :delete %>
+
+<h4>Order Count <%= @banana.orders.count %></h4>
+<h2>All Users Who Have Ordered</h2>
+
+<% @banana.users.uniq.each do |user| %>
+  <p><%= user.name %></p>
+<% end %>

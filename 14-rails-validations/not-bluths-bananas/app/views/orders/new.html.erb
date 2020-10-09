@@ -1,0 +1,12 @@
+<h1>Order Form</h1>
+
+<%= form_for @order do |f| %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
+
+  <%= f.label :banana_id %>
+  <%= f.collection_select :banana_id, Banana.all, :id, :name %>
+
+  <%= f.submit %>
+
+<% end %>
