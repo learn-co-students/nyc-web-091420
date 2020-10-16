@@ -1,0 +1,32 @@
+<h1>Banana Show</h1>
+
+<% if session[:view_count].to_i <= 2 %>
+
+  <% if flash[:success] %>
+    <h2 style="color:green;"><%= flash[:success] %></h2>
+  <% end %>
+
+  <h2 style="color:green;"><%= 2 - session[:view_count].to_i %> Page views left!!</h2>
+  
+
+  <h3><%= @banana.name %></h3>
+  <p>Topping: <%= @banana.toppings %></p>
+  <p>Price: <%= @banana.price %></p>
+
+
+  <%= button_to "DELETE", banana_path(@banana), method: :delete %>
+
+  <h4>Order Count <%= @banana.orders.count %></h4>
+  <h2>All Users Who Have Ordered</h2>
+
+  <% @banana.users.uniq.each do |user| %>
+    <p><%= user.name %></p>
+  <% end %>
+
+<% else %>
+  <h1>Show Some Ad</h1>
+  <iframe width="966" height="543" src="https://www.youtube.com/embed/HXqjfpc1Kjg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <%= button_to "I super promise I watched this ad", reset_page_count_path, method: :delete %>
+  <%# create some button confirming they watched add and can see more pages %>
+<% end %>
