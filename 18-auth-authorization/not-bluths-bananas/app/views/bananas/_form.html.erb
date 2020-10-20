@@ -1,0 +1,27 @@
+
+<% if flash[:my_errors] %>
+  <% flash[:my_errors].each do |error| %>
+    <p style="color:red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+
+<%= form_for @banana do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :toppings %>
+  <%= f.text_field :toppings %>
+
+  <%= f.label :price_plus_10 %>
+  <%= f.number_field :price_plus_10%>
+  <hr>
+  <h3>Fill Orders For this Banana</h3>
+  <%= f.fields_for :orders do |ff| %>
+    <%= ff.label :user_id %>
+    <%= ff.collection_select :user_id, User.all, :id, :name %>
+    <%# ff.label :banana_id %>
+  <% end%>
+
+  <%= f.submit %>
+<% end %>

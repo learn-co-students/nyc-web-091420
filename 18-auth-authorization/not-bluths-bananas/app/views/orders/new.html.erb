@@ -1,0 +1,25 @@
+<h1>Order Form</h1>
+
+<%= form_for @order do |f| %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+
+  <%= f.label :banana_id %>
+  <%= f.collection_select :banana_id, @bananas, :id, :name %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<%# <select name="user_id"> %>
+  <%# <option value="1">name</option> %>
+<%# </select> %>
+
+
+<%# <form action=""> %>
+  <%# <input type="text" name="sports[football]" > %>
+  <%# <input type="text" name="sports[soccer]" > %>
+  <%# <input type="text" name="sports[tennis]" > %>
+  <%# <input type="text" name="cooking[pasta]" > %>
+  <%# <input type="text" name="cooking[chicken]" > %>
+<%# </form> %>

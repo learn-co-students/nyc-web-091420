@@ -1,0 +1,9 @@
+<h1>Users!!!</h1>
+
+<% if flash[:wrong_user]%>
+  <p><%= flash[:wrong_user] %></p>
+<% end %>
+
+<% @users.each do |user| %>
+  <p><%= link_to user.name, user_path(user) %></p>
+<% end %>

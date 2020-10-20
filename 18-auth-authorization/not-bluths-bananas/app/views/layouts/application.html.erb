@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NotBluthsBananas</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="banner">
+      <%= image_tag "bluth_banner_gif.gif", class: "banner-img" %>
+    </div>
+
+    <ul class="nav">
+      <li><a href="<%= bananas_path %>">Bananas</a></li>
+      <li><a href="<%= new_banana_path %>">Create Banana</a></li>
+      <li><a href="<%= new_order_path %>">Place Order</a></li>
+
+      <% if @current_user %>
+        <li class="right">Welcome <%= @current_user.name %>!</li>
+        <li class="right"><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li class="right"><a href="<%= new_user_path %>">Sign Up!</a></li>
+        <li class="right"><a href="<%= new_login_path %>">Login!</a></li>
+      <% end %>
+    </ul>
+
+    <%= yield %>
+  </body>
+</html>
