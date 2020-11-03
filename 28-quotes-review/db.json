@@ -1,0 +1,141 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "quote": "Expect nothing. Live frugally on surprise.",
+      "author": "Alice Walker"
+    },
+    {
+      "id": 3,
+      "quote": "today a man on the street pointed to me & said ‘what the hell is that!?’ i wanted to turn around, tell him that i got this dress on sale & i got this body for free but you have been making me pay for both ever since.",
+      "author": "Alok Vaid Menon"
+    },
+    {
+      "id": 4,
+      "quote": "You gain strength, courage and confidence by every experience in which you really stop to look fear in the face. You are able to say to yourself, 'I have lived through this horror. I can take the next thing that comes along.' You must do the thing you think you cannot do.",
+      "author": "Eleanor Roosevelt"
+    },
+    {
+      "id": 5,
+      "quote": "We had better not enjoy the moment, but create the moment.",
+      "author": "Ai Weiwei"
+    },
+    {
+      "id": 6,
+      "quote": "If I didn't define myself for myself, I would be crunched into other people's fantasies for me and eaten alive.",
+      "author": "Audre Lorde"
+    },
+    {
+      "id": 7,
+      "quote": "Our greatest glory is not in never falling, but in rising everytime we fall.",
+      "author": "Confucius"
+    },
+    {
+      "id": 8,
+      "quote": "Don't count the days, make the days count.",
+      "author": "Muhammad Ali"
+    },
+    {
+      "id": 9,
+      "quote": "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+      "author": "James Baldwin"
+    },
+    {
+      "id": 10,
+      "quote": "You know, failure hurts. Any kind of failure stings. If you live in the sting, you will undoubtedly fail. My way of getting past the sting is to say no, I’m just not going to let this get me down.",
+      "author": "Sonia Sotomayor"
+    },
+    {
+      "id": 11,
+      "quote": "The here and now is all we have, and if we play it right it's all we'll need.",
+      "author": "Ann Richards"
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "quoteId": 1,
+      "createdAt": 1558524356
+    },
+    {
+      "quoteId": 10,
+      "id": 2,
+      "createdAt": 1558524358
+    },
+    {
+      "id": 3,
+      "quoteId": 1,
+      "createdAt": 1558524356
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422125525,
+      "id": 4
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422238350,
+      "id": 5
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422477701,
+      "id": 6
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422481829,
+      "id": 7
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422482404,
+      "id": 8
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422482798,
+      "id": 9
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422483023,
+      "id": 10
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422483178,
+      "id": 11
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422483347,
+      "id": 12
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422483503,
+      "id": 13
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422517632,
+      "id": 14
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422517833,
+      "id": 15
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422518032,
+      "id": 16
+    },
+    {
+      "quoteId": 3,
+      "createdAt": 1604422518202,
+      "id": 17
+    }
+  ]
+}
