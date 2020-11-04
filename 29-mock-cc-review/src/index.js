@@ -1,4 +1,5 @@
-// - Add a new **ingredient** to the spice blend when the `#ingredient-form` is submitted. The new ingredient should be displayed on the page (no persistence needed for now).
+let currentSpiceId = 1
+
 
 /**** DOM Elements ****/ 
 const imageTag = document.querySelector(".detail-image")
@@ -6,8 +7,25 @@ const titleTag = document.querySelector(".title")
 const ingredientsListUl = document.querySelector(".ingredients-list")
 const updateForm = document.querySelector("#update-form")
 const ingredientForm = document.querySelector("#ingredient-form")
+const spiceImageList = document.querySelector("#spice-images")
 
 /**** Render Function ****/ 
+const renderSpiceImage = spiceObj => {
+  // append each image in an img tag within the #spice-images div
+  const imgTag = document.createElement("img")
+  imgTag.src = spiceObj.image
+  imgTag.alt = spiceObj.title
+
+  imgTag.addEventListener("click", () => {
+    currentSpiceId = spiceObj.id
+    console.log(currentSpiceId)
+    // make a GET /spiceblend/:id
+    getOneSpice(spiceObj.id)
+    // update the DOM to show that spice's info
+  })
+  spiceImageList.append(imgTag)
+}
+
 const renderIngredient = ingredientObj => {
   // - create a li tag
   const li = document.createElement("li")
@@ -23,6 +41,7 @@ const renderSpice = spiceObj => {
   titleTag.textContent = spiceObj.title
   
   // go thru the ingredients for the spice
+  ingredientsListUl.innerHTML = ""
   spiceObj.ingredients.forEach(renderIngredient)
 }
 
@@ -33,11 +52,14 @@ ingredientForm.addEventListener("submit", event => {
   // const ingredientValue = event.target.name.value
   const ingredientValue = document.querySelector("#ingredient-name").value
   const ingredientObj = {
-    name: ingredientValue
+    name: ingredientValue,
+    spiceblendId: currentSpiceId
   }
-  // add a new li inside the ingredient list
-  renderIngredient(ingredientObj)
+
+  addIngredient(ingredientObj)
 })
+
+
 
 updateForm.addEventListener("submit", event => {
   event.preventDefault()
@@ -54,8 +76,20 @@ updateForm.addEventListener("submit", event => {
 
 
 /**** Fetch Functions ****/ 
+const addIngredient = (ingredientObj) => {
+  fetch("http://localhost:3000/ingredients", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(ingredientObj)
+  })
+    .then(r => r.json())
+    .then(renderIngredient)
+}
+
 const updateTitle = (updateObj) => {
-  fetch("http://localhost:3000/spiceblends/1", {
+  fetch(`http://localhost:3000/spiceblends/${currentSpiceId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
@@ -69,13 +103,22 @@ const updateTitle = (updateObj) => {
     })
 }
 
-const getFirstSpice = () => {
-  fetch("http://localhost:3000/spiceblends/1")
+const getOneSpice = (id) => {
+  fetch(`http://localhost:3000/spiceblends/${id}`)
     .then(r => r.json())
-    .then(firstSpice => {
-      renderSpice(firstSpice)
+    .then(spiceObj => {
+      renderSpice(spiceObj)
+    })
+}
+
+const getAllSpices = () => {
+  fetch("http://localhost:3000/spiceblends")
+    .then(r => r.json())
+    .then(spiceArray => {
+      spiceArray.forEach(renderSpiceImage)
     })
 }
 
 /**** Initialize *****/ 
-getFirstSpice()
+getOneSpice(1)
+getAllSpices()
