@@ -2,7 +2,6 @@
 const header = document.querySelector("#header")
 console.log("Here's your header:", header)
 
-
 /***** Deliverable 2 *****/
 header.style.color = "red"
 
@@ -26,6 +25,8 @@ PLAYERS.forEach(function(player) {
   document.querySelector(".player-container").append(newDiv)
 })
 
+// const container = document.querySelector(".player-container")
+// container.innerHTML = ""
 
 
 // PLAYERS.forEach(function(player) {
@@ -70,7 +71,7 @@ PLAYERS.forEach(function(player) {
 </div> */
 
 /***** Deliverable 4 *****/
-document.querySelector("div.player[data-number='7']").remove()
+// document.querySelector("div.player[data-number='7']").remove()
 
 // const datanum = document.querySelector("[data-number='7']")
 // console.log(datanum)
@@ -79,3 +80,8 @@ document.querySelector("div.player[data-number='7']").remove()
 
 // const div = document.querySelector("data-number")
 // console.log(div)
+
+
+// create the element
+// assing some attributes
+// add to a parent element

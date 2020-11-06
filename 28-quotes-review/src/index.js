@@ -1,5 +1,9 @@
 const renderQuote = quoteObj => {
   console.log(quoteObj)
+
+
+
+
   const quoteUl = document.querySelector("#quote-list")
   const quoteLi = document.createElement("li")
   quoteLi.setAttribute("class", "quote-card")
@@ -117,6 +121,7 @@ const quoteListClickHandler = (event) => {
     const likeButton = event.target
     const card = likeButton.closest(".quote-card")
     const id = parseInt(card.dataset.id)
+
 
     const likesSpan = event.target.children[0]
     const newLikes = parseInt(likesSpan.textContent) + 1
