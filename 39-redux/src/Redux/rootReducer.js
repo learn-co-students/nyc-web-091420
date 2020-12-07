@@ -20,6 +20,9 @@ function apiReducer(state = defaultState.api, action) {
         case "FETCH_DOGS":
             console.log("inside of API reducer", action)
             return action.payload
+        case "ADD_DOG":
+            console.log("inside of API reducer", action)
+            return [...state, action.payload]
         default:
             return state
     }
