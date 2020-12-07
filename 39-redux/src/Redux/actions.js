@@ -19,4 +19,17 @@ export function getDogsFromApi() {
 
     }
 }
+export function addDogToApi() {
+    console.log("Inside of action creater")
+    return function (dispatch) {
+        fetch('http://localhost:5000/dogs', {
+
+        })
+            .then(resp => resp.json())
+            // send data to the reducer 
+            // ?
+            .then(singleObj => dispatch({ type: FETCH_DOGS, payload: singleObj }))
+
+    }
+}
 
